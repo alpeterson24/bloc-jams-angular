@@ -2,6 +2,11 @@
      function SongPlayer() {
          var SongPlayer = {};
          
+         
+         /**
+         * @desc Object holding song data
+         * @type {Object}
+         */
          var currentSong = null;
          /**
          * @desc Buzz object audio file
@@ -24,27 +29,47 @@
              currentBuzzObject = new buzz.sound(song.audioUrl, {
                 formats: ['mp3'],
                 preload: true
-        });
+         });
  
-        currentSong = song;
-    };
-         
+         currentSong = song;
+         };
+
+         /**
+         * @function playSong
+         * @desc Play the currentBuzzObject sets song playing to true
+         * @param {Object} song
+         */
+         var playSong = function(song) {
+            currentBuzzObject.play();
+            song.playing = true;
+         }
+         /**
+         * @function play
+         * @desc Plays the selected song 
+         * @param {Object} song
+         */
          SongPlayer.play = function(song) {
             if (currentSong !== song) {
                setSong(song);
-               currentBuzzObject.play();
-               song.playing = true; 
+               playSong(song);
             } else if (currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
-                currentBuzzObject.play();
+                playSong(song);
                 }
             }
-     };
+         };
+         /**
+         * @function pause
+         * @desc Pauses the song set song playing to false
+         * @param {Object} song
+         */
          SongPlayer.pause = function(song) {
             currentBuzzObject.pause();
             song.playing = false;
- };
-     
+         };
+         
+         return SongPlayer;
+     };
          
          
  
