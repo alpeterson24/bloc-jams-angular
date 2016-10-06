@@ -19,9 +19,9 @@
          .state('collection', {
              url: '/collection',
              controller: 'CollectionCtrl as collection',
-             templateUrl: '/template/collection.html'   
+             templateUrl: '/templates/collection.html'   
          });
-     }
+     };
 
      angular
          .module('blocJams', ['ui.router'])

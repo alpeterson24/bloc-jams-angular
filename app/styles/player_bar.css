@@ -38,7 +38,16 @@
      padding-right: 1rem;
  }
  
- .player-bar .currently-playing {
+.player-bar .main-controls .previous {
+     margin-right: 16.5%;
+ }
+ 
+ .player-bar .main-controls .play-pause {
+     margin-right: 15%;
+     font-size: 1.6rem;
+ }
+
+.player-bar .currently-playing {
      width: 50%;
      text-align: center;
      position: relative;
@@ -172,16 +181,9 @@
          display: none;
      }
  
-     .player-bar .currently-playing .artist-song-mobile {
+     .player-bar .artist-song-mobile {
          display: block;
      }
  }
 
- .player-bar .main-controls .previous {
-     margin-right: 16.5%;
- }
  
- .player-bar .main-controls .play-pause {
-     margin-right: 15%;
-     font-size: 1.6rem;
- }
