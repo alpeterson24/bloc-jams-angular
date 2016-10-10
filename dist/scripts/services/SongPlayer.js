@@ -1,5 +1,5 @@
 (function() {
-     function SongPlayer(fixtures) {
+     function SongPlayer(Fixtures) {
          var SongPlayer = {};
          
          /**
@@ -9,19 +9,9 @@
          var currentAlbum = Fixtures.getAlbum();
          
          /**
-         * @function getSongIndex
-         * @desc returns the index of the current song in the album
-         * @param {object} song
-         */
-         var getSongIndex = function(song) {
-            return currentAlbum.songs.indexOf(song);
-         };
-         
-         /**
          * @desc Object holding song data
          * @type {Object}
          */
-         
          SongPlayer.currentSong = null;
          
          /**
@@ -44,10 +34,13 @@
              currentBuzzObject = new buzz.sound(song.audioUrl, {
                 formats: ['mp3'],
                 preload: true
-         });
- 
-         SongPlayer.currentSong = song;
+                });
          };
+            
+             
+         SongPlayer.currentSong = null;
+             
+     };
 
          /**
          * @function playSong
@@ -55,10 +48,23 @@
          * @param {Object} song
          */
          var playSong = function(song) {
+            if(currentBuzzObject){
             currentBuzzObject.play();
             song.playing = true;
-         }
+            }
+         };
          
+            /**
+            * @function getSongIndex
+            * @desc returns the index of the current song in the album
+            * @param {object} song
+            */
+            var getSongIndex = function(song) {
+            return currentAlbum.songs.indexOf(song);
+            };
+    
+         SongPlayer.currentSong = null;
+    
          /**
          * @function play
          * @desc Plays the selected song 
@@ -71,7 +77,7 @@
                playSong(song);
             } else if (SongPlayer.currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
-                currentBuzzObject.play();
+                playSong(song);
                 }
             }
          };
