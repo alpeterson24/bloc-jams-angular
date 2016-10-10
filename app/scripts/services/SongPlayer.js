@@ -9,12 +9,6 @@
          var currentAlbum = Fixtures.getAlbum();
          
          /**
-         * @desc Object holding song data
-         * @type {Object}
-         */
-         SongPlayer.currentSong = null;
-         
-         /**
          * @desc Buzz object audio file
          * @type {Object}
          */
@@ -35,12 +29,9 @@
                 formats: ['mp3'],
                 preload: true
                 });
+             SongPlayer.currentSong = song;
          };
             
-             
-         SongPlayer.currentSong = null;
-             
-     };
 
          /**
          * @function playSong
@@ -49,8 +40,8 @@
          */
          var playSong = function(song) {
             if(currentBuzzObject){
-            currentBuzzObject.play();
-            song.playing = true;
+                currentBuzzObject.play();
+                song.playing = true;
             }
          };
          
