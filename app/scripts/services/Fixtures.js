@@ -1,7 +1,7 @@
  (function() {
      function Fixtures() {
             var Fixtures = {};
-         
+
             var albumPicasso = {
                  title: 'The Colors',
                  artist: 'Pablo Picasso',
@@ -31,20 +31,20 @@
                      { title: 'Wrong phone number', duration: '2:15' }
                  ]
              };
-         
-         Fixtures.getAlbum = function() {
-         return albumPicasso;
-         };
-         
-         Fixtures.getCollection = function(numberOfAlbums) {
-            var albums = [];
-            for (var i = 0; i < numberOfAlbums; i++) {
-                albums.push(albumPicasso);
-            }
-            return albums;
-            };
-         
-             return Fixtures;
+
+             Fixtures.getAlbum = function() {
+             return albumPicasso;
+             };
+
+             Fixtures.getCollection = function(numberOfAlbums) {
+                var albums = [];
+                for (var i = 0; i < numberOfAlbums; i++) {
+                    albums.push(albumPicasso);
+                }
+                return albums;
+                };
+
+                 return Fixtures;
      }
  
      angular

@@ -1,9 +1,9 @@
-*, *::before, *::after {
+ *, *::before, *::after {
      -moz-box-sizing: border-box;
      -webkit-box-sizing: border-box;
      box-sizing: border-box;
  }
-html {
+ html {
      height: 100%; /* makes sure our HTML takes up 100% of the browser window */
      font-size: 100%;
  }
@@ -16,7 +16,7 @@ html {
      font-family: 'Open Sans'; /* sets our font to the "Open Sans" typeface */
      color: white;             /* sets the text color to white */
      min-height: 100%;         /* says the height of the body must be, at minimum, 100% of the window */
-     padding-bottom: 200px;    
+     padding-bottom: 200px;
  }
  .navbar {
      position: relative;
@@ -24,20 +24,20 @@ html {
      background-color: rgba(101,18,95,0.5);
      z-index: 1;
  }
- 
+
  .navbar .logo {
      position: relative; /* positioning will be explained in a resource */
      left: 2rem;
      cursor: pointer;
  }
-.navbar .links-container {
+ .navbar .links-container {
      display: table;
      position: absolute;
      top: 0;
      right: 0;
      height: 100px;
      color: white;
-     
+
      text-decoration: none;
  }
  .links-container .navbar-link {
@@ -68,13 +68,13 @@ html {
  /* Medium and small screens (640px) */
  @media (min-width: 640px) {
    html { font-size: 112%; }
-     
+
      .column {
          float: left;
          padding-left: 1rem;
          padding-right: 1rem;
      }
-      
+
      .column.full { width: 100%; }
      .column.two-thirds { width: 66.7%; }
      .column.half { width: 50%; }
@@ -82,17 +82,17 @@ html {
      .column.fourth { width: 25%; }
      .column.flow-opposite { float: right; }
  }
- 
+
  /* Large screens (1024px) */
  @media (min-width: 1024px) {
    html { font-size: 120%; }
  }
-.clearfix::before,
-.clearfix::after {
+ .clearfix::before,
+ .clearfix::after {
    content: " ";
    display: table;
-}
+ }
 
-.clearfix::after {
+ .clearfix::after {
    clear: both;
-}
+ }
