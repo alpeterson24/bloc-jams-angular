@@ -6,5 +6,5 @@ This is the Angular version of the BlocJams application. One of my first project
 
 Test out the application [here](http://machinist-boar-62537.netlify.com/).
 
-Select Collections and pick an Album to listen.
+Select Collections (upper right corner) and pick an Album to listen to.
 ![How to Listen](https://github.com/alpeterson24/bloc-jams-angular/blob/master/app/assets/images/listen.png "Listen")
